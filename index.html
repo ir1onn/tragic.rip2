@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1135674543990652928/1139623525704007691/IMG_4434.png">
+    <meta property="og:title" content="Honored - Your Multi-Purpose Discord Companion">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1135674543990652928/1139623525704007691/IMG_4434.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Discover the power of Honored, your ultimate Discord companion. Elevate your server experience.">
+    <meta property="keywords" content="honored, discord bot, discord, honored, honoredrip, honored.rip, honored rip, honoredbot">
+    <meta property="og:description" content="Discover the power of Honored, your ultimate Discord companion. Elevate your server experience.">
+    <meta property="description" content="Discover the power of Honored, your ultimate Discord companion. Elevate your server experience.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ez1vFXYCX5ovSKtTGExhjzrgnNlEO+OkP5Pb50Ew7UJgtzIStQ4IkbCuNAM4U7d9" crossorigin="anonymous">
+    <title>Honored - Your Multi-Purpose Discord Companion</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/minecraft-font/2.0/regular/minecraft.woff') format('woff');
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Minecraft', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: scaleUpDown 4s infinite alternate;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Minecraft', sans-serif;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: fadeInText 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            animation: fadeInText 2s ease-out;
+        }
+
+        .animated-text {
+            display: none;
+        }
+
+        @keyframes scaleUpDown {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Rest of your existing styles... */
+
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 1.3em;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        a:hover {
+            color: #1a1a1a;
+            background-color: #fff;
+        }
+
+        .social {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .social a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2em;
+            transition: transform 0.3s;
+        }
+
+        .social a i {
+            transition: transform 0.3s;
+        }
+
+        .social a:hover i {
+            transform: scale(1.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Snow animation styles... */
+
+        #snow-container {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://cdn.discordapp.com/attachments/1135674543990652928/1139623525704007691/IMG_4434.png" alt="Honored Logo">
+        <h1>Honored</h1>
+        <a href="/invite">Invite Now</a>
+        <a href="/discord">Join Discord</a>
+        <a href="/commands">Commands</a>
+    </header>
+    <footer>
+        <div>© 2024 Honored. All rights reserved.</div>
+    </footer>
+    <div class="social">
+        <a href="https://instagram.com/honoredbot" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Snow container -->
+    <div id="snow-container"></div>
+
+    <script>
+        // Snow script...
+        const snowContainer = document.getElementById('snow-container');
+
+        for (let i = 0; i < 100; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.width = Math.random() * 8 + 4 + 'px';
+            snowflake.style.height = snowflake.style.width;
+            snowflake.style.animationDuration = Math.random() * 2 + 1 + 's';
+            snowflake.style.animationDelay = Math.random() + 's';
+            snowContainer.appendChild(snowflake);
+        }
+    </script>
+</body>
+
+</html>
